@@ -1,0 +1,39 @@
+{
+  "registry_version": "1.0.0",
+  "updated_at": "2026-09-23T00:00:00Z",
+  "models": [
+    {
+      "model_id": "finguard-xgboost-v1",
+      "model_type": "xgboost",
+      "version": "1.0.0",
+      "status": "production",
+      "artifact_path": "ml-backend/models/xgboost/v1/model.json",
+      "feature_schema_version": "1.0.0",
+      "algorithm": "XGBClassifier",
+      "hyperparameters": {
+        "max_depth": 6,
+        "learning_rate": 0.05,
+        "n_estimators": 250,
+        "scale_pos_weight": 25.0,
+        "subsample": 0.8,
+        "colsample_bytree": 0.8,
+        "objective": "binary:logistic",
+        "eval_metric": "aucpr"
+      }
+    },
+    {
+      "model_id": "finguard-isolation-forest-v1",
+      "model_type": "isolation_forest",
+      "version": "1.0.0",
+      "status": "production",
+      "artifact_path": "ml-backend/models/isolation-forest/v1/model.joblib",
+      "algorithm": "IsolationForest",
+      "hyperparameters": {
+        "n_estimators": 100,
+        "contamination": 0.035,
+        "max_samples": 0.8,
+        "random_state": 42
+      }
+    }
+  ]
+}

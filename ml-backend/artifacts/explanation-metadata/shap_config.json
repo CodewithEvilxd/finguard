@@ -1,0 +1,110 @@
+{
+  "explainability_version": "shap-v1.0.0",
+  "explainer_type": "TreeSHAP",
+  "implementation": "native_xgboost_pred_contribs",
+  "model_compatibility": [
+    "XGBClassifier",
+    "xgb.Booster"
+  ],
+  "anonymized_feature_policy": "Strictly preserved as numeric signals; do not invent real-world semantics for anonymized Kaggle IEEE-CIS fields (C1, D1, V100, card1-card6, addr1-addr2).",
+  "features": {
+    "amount_log": {
+      "type": "numerical",
+      "description": "Log(1 + transaction_amount) transformed monetary value",
+      "anonymized": false
+    },
+    "hour_of_day": {
+      "type": "numerical",
+      "description": "Hour of day derived from relative timedelta TransactionDT modulo 24",
+      "anonymized": false
+    },
+    "day_of_week": {
+      "type": "numerical",
+      "description": "Day of week derived from relative timedelta TransactionDT",
+      "anonymized": false
+    },
+    "is_night": {
+      "type": "binary",
+      "description": "Indicator for execution between 00:00 and 05:00 hours",
+      "anonymized": false
+    },
+    "is_weekend": {
+      "type": "binary",
+      "description": "Indicator for weekend execution (Saturday or Sunday)",
+      "anonymized": false
+    },
+    "product_code_encoded": {
+      "type": "categorical_ordinal",
+      "description": "Product code category (W, C, R, H, S)",
+      "anonymized": false
+    },
+    "card4_brand_encoded": {
+      "type": "categorical_ordinal",
+      "description": "Card network brand (Visa, Mastercard, Discover, Amex)",
+      "anonymized": false
+    },
+    "card6_type_encoded": {
+      "type": "categorical_ordinal",
+      "description": "Card funding type (Debit, Credit)",
+      "anonymized": false
+    },
+    "card1_freq": {
+      "type": "numerical",
+      "description": "Empirical frequency of card1 issuing institution identifier in training partition",
+      "anonymized": true
+    },
+    "addr1_freq": {
+      "type": "numerical",
+      "description": "Empirical frequency of addr1 billing location identifier in training partition",
+      "anonymized": true
+    },
+    "is_foreign_corridor": {
+      "type": "binary",
+      "description": "Indicator for addr2 foreign/cross-border destination mismatch",
+      "anonymized": true
+    },
+    "email_domain_risk": {
+      "type": "numerical",
+      "description": "Risk score associated with purchaser email provider domain",
+      "anonymized": false
+    },
+    "has_identity": {
+      "type": "binary",
+      "description": "Presence of digital identity footprint or device fingerprint telemetry",
+      "anonymized": false
+    },
+    "is_mobile_device": {
+      "type": "binary",
+      "description": "Indicator for mobile device type telemetry",
+      "anonymized": false
+    },
+    "c1_velocity": {
+      "type": "numerical",
+      "description": "Log(1 + C1) masked transaction frequency/velocity counter",
+      "anonymized": true,
+      "note": "Preserved as masked numeric indicator; semantic definition not invented"
+    },
+    "d1_recency": {
+      "type": "numerical",
+      "description": "Log(1 + D1) masked timedelta counter since previous transaction event",
+      "anonymized": true,
+      "note": "Preserved as masked numeric indicator; semantic definition not invented"
+    },
+    "v100_masked_signal": {
+      "type": "numerical",
+      "description": "V100 engineered behavioral telemetry signal from Vesta corporation",
+      "anonymized": true,
+      "note": "Preserved as masked numeric indicator; semantic definition not invented"
+    }
+  },
+  "output_contract": {
+    "top_k": 6,
+    "format": {
+      "feature": "string",
+      "value": "float",
+      "attribution": "float",
+      "direction": "increases_risk | decreases_risk",
+      "description": "string"
+    }
+  }
+}

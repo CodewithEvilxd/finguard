@@ -1,0 +1,31 @@
+{
+  "test_cases": [
+    {
+      "id": "TC-IDEMPOTENCY",
+      "description": "Submitting identical transaction_id twice must not create duplicates",
+      "payload": {
+        "transaction_id": "TEST-TXN-IDEMP-001",
+        "account_id": "ACC-TEST",
+        "amount": 500.0,
+        "currency": "USD",
+        "transaction_type": "purchase",
+        "channel": "web"
+      },
+      "expected_status": 201
+    },
+    {
+      "id": "TC-ALERT-THRESHOLD",
+      "description": "Wire transfer exceeding $25k must trigger alert with score >= 60",
+      "payload": {
+        "transaction_id": "TEST-WIRE-ALERT-001",
+        "account_id": "ACC-TEST",
+        "amount": 65000.0,
+        "currency": "USD",
+        "transaction_type": "wire",
+        "channel": "web"
+      },
+      "expected_status": 201,
+      "expected_alert": true
+    }
+  ]
+}

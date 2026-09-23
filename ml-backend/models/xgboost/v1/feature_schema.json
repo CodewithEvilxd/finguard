@@ -1,0 +1,24 @@
+{
+  "model_version": "1.0.0",
+  "feature_count": 17,
+  "features": [
+    "amount_log",
+    "hour_of_day",
+    "day_of_week",
+    "is_night",
+    "is_weekend",
+    "product_code_encoded",
+    "card4_brand_encoded",
+    "card6_type_encoded",
+    "card1_freq",
+    "addr1_freq",
+    "is_foreign_corridor",
+    "email_domain_risk",
+    "has_identity",
+    "is_mobile_device",
+    "c1_velocity",
+    "d1_recency",
+    "v100_masked_signal"
+  ],
+  "optimal_threshold": 0.8
+}

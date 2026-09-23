@@ -1,0 +1,38 @@
+[
+  {
+    "scenario_id": "DEMO-WIRE-001",
+    "name": "High Value Foreign Wire Outflow",
+    "transaction_id": "TXN-DEMO-99120",
+    "account_id": "ACC-100482",
+    "amount": 84500.0,
+    "currency": "USD",
+    "transaction_type": "wire",
+    "channel": "web",
+    "is_foreign": 1,
+    "hour_of_day": 2,
+    "is_weekend": 1,
+    "velocity_zscore": 4.1,
+    "expected_risk_level": "critical",
+    "expected_rule_triggers": [
+      "RULE_HIGH_AMOUNT",
+      "RULE_FOREIGN_WIRE",
+      "RULE_NIGHT_WIRE"
+    ]
+  },
+  {
+    "scenario_id": "DEMO-PURCHASE-002",
+    "name": "Regular Card Merchant Purchase",
+    "transaction_id": "TXN-DEMO-99121",
+    "account_id": "ACC-100482",
+    "amount": 42.5,
+    "currency": "USD",
+    "transaction_type": "purchase",
+    "channel": "pos",
+    "is_foreign": 0,
+    "hour_of_day": 14,
+    "is_weekend": 0,
+    "velocity_zscore": 0.2,
+    "expected_risk_level": "low",
+    "expected_rule_triggers": []
+  }
+]

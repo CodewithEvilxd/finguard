@@ -1,0 +1,40 @@
+[
+  {
+    "run_id": "RETRAIN-20260923-151442",
+    "timestamp": "2026-09-23T15:15:05.869115+00:00",
+    "trigger": "api_manual",
+    "duration_seconds": 23.45,
+    "status": "completed",
+    "metrics": {
+      "xgboost": {
+        "roc_auc": 0.9999147744040657,
+        "pr_auc": 0.9985078367158381,
+        "f1": 0.9862204724409449,
+        "samples": 70000
+      },
+      "isolation_forest": {
+        "contamination": 0.035,
+        "samples": 67593
+      }
+    }
+  },
+  {
+    "run_id": "RETRAIN-20260923-151948",
+    "timestamp": "2026-09-23T15:19:57.989688+00:00",
+    "trigger": "cron_cli",
+    "duration_seconds": 9.99,
+    "status": "completed",
+    "metrics": {
+      "xgboost": {
+        "roc_auc": 0.9999147744040657,
+        "pr_auc": 0.9985078367158381,
+        "f1": 0.9862204724409449,
+        "samples": 70000
+      },
+      "isolation_forest": {
+        "contamination": 0.035,
+        "samples": 67593
+      }
+    }
+  }
+]

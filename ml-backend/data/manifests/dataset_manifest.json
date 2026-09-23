@@ -1,0 +1,36 @@
+{
+  "dataset_manifest_version": "1.0.0",
+  "registered_datasets": {
+    "ieee_cis": {
+      "name": "IEEE-CIS Fraud Detection",
+      "source": "Kaggle",
+      "canonical_path": "backend/data/raw/ieee_cis/",
+      "target_field": "isFraud",
+      "primary_key": "TransactionID",
+      "temporal_field": "TransactionDT",
+      "required_features": [
+        "TransactionAmt",
+        "ProductCD",
+        "card1",
+        "card2",
+        "card3",
+        "card4",
+        "card5",
+        "card6",
+        "addr1",
+        "addr2",
+        "dist1",
+        "dist2",
+        "P_emaildomain",
+        "R_emaildomain"
+      ]
+    },
+    "ulb_creditcard": {
+      "name": "ULB Credit Card Fraud",
+      "source": "Kaggle",
+      "canonical_path": "backend/data/raw/ulb_credit_card/",
+      "target_field": "Class",
+      "temporal_field": "Time"
+    }
+  }
+}

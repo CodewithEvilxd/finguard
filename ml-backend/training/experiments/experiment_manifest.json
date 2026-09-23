@@ -1,0 +1,53 @@
+{
+  "suite_name": "FinGuard ML Model Experiments",
+  "last_updated": "2026-09-22T22:45:34.991245+00:00",
+  "dataset": "IEEE-CIS Fraud Detection (Temporal Split)",
+  "train_samples": 70000,
+  "test_samples": 15000,
+  "experiments": [
+    {
+      "experiment_id": "EXP-001-LOGISTIC-REGRESSION",
+      "algorithm": "LogisticRegression",
+      "role": "linear_baseline",
+      "metrics": {
+        "roc_auc": 0.9999,
+        "pr_auc": 0.9976,
+        "f1": 0.9467
+      },
+      "status": "archived_baseline"
+    },
+    {
+      "experiment_id": "EXP-002-RANDOM-FOREST",
+      "algorithm": "RandomForestClassifier",
+      "role": "ensemble_baseline",
+      "metrics": {
+        "roc_auc": 0.9999,
+        "pr_auc": 0.9985,
+        "f1": 0.9722
+      },
+      "status": "archived_baseline"
+    },
+    {
+      "experiment_id": "EXP-003-XGBOOST-V1",
+      "algorithm": "XGBClassifier",
+      "role": "production_champion",
+      "metrics": {
+        "roc_auc": 0.9999147744040657,
+        "pr_auc": 0.9985078367158381,
+        "precision": 0.9920792079207921,
+        "recall": 0.9804305283757339,
+        "f1": 0.9862204724409449,
+        "precision_at_100": 1.0,
+        "confusion_matrix": {
+          "tn": 14485,
+          "fp": 4,
+          "fn": 10,
+          "tp": 501
+        },
+        "fpr": 0.00027607150251915245,
+        "fnr": 0.019569471624266144
+      },
+      "status": "active_champion"
+    }
+  ]
+}

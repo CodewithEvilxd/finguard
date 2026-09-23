@@ -1,0 +1,55 @@
+{
+  "feature_schema_version": "1.0.0",
+  "generated_at": "2026-09-23T00:00:00Z",
+  "features": [
+    {
+      "name": "amount_log",
+      "dtype": "float32",
+      "description": "Log(1 + amount) transformed monetary value",
+      "derived_from": "amount / TransactionAmt",
+      "handling": "log1p normalization"
+    },
+    {
+      "name": "is_wire",
+      "dtype": "float32",
+      "description": "Binary indicator for high-risk wire/digital fund transfers",
+      "derived_from": "transaction_type",
+      "handling": "one-hot / binary mapping"
+    },
+    {
+      "name": "is_night",
+      "dtype": "float32",
+      "description": "Binary indicator for transactions executed between 00:00 and 05:00 local time",
+      "derived_from": "timestamp / TransactionDT",
+      "handling": "modulo-based hour extraction"
+    },
+    {
+      "name": "is_weekend",
+      "dtype": "float32",
+      "description": "Binary indicator for weekend execution",
+      "derived_from": "timestamp / TransactionDT",
+      "handling": "day-of-week extraction"
+    },
+    {
+      "name": "is_foreign",
+      "dtype": "float32",
+      "description": "Binary indicator for cross-border beneficiary / card mismatch",
+      "derived_from": "addr2 / corridor",
+      "handling": "binary indicator"
+    },
+    {
+      "name": "velocity_zscore",
+      "dtype": "float32",
+      "description": "Z-score of transaction count within 1-hour rolling window against historical baseline",
+      "derived_from": "historical velocity",
+      "handling": "standardization"
+    },
+    {
+      "name": "channel_risk",
+      "dtype": "float32",
+      "description": "Prior empirical fraud rate associated with ingestion channel (api/web/pos/atm)",
+      "derived_from": "channel",
+      "handling": "ordinal target encoding"
+    }
+  ]
+}

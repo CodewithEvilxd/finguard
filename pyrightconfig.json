@@ -1,0 +1,18 @@
+{
+  "include": [
+    "backend",
+    "ml-backend"
+  ],
+  "exclude": [
+    "**/node_modules",
+    "**/__pycache__",
+    "**/.venv"
+  ],
+  "extraPaths": [
+    "d:/finguard/ml-backend/.venv/Lib/site-packages",
+    "d:/finguard/backend/.venv/Lib/site-packages",
+    "d:/finguard/backend",
+    "d:/finguard/ml-backend"
+  ],
+  "reportMissingImports": "none"
+}

@@ -1,0 +1,24 @@
+{
+  "accounts": [
+    {
+      "account_number": "ACC-100482",
+      "account_holder": "Apex Global Logistics",
+      "balance": 245000.0,
+      "currency": "USD",
+      "risk_tier": "low"
+    },
+    {
+      "account_number": "ACC-829104",
+      "account_holder": "Helios Semiconductor Corp",
+      "balance": 890000.0,
+      "currency": "USD",
+      "risk_tier": "low"
+    }
+  ],
+  "roles": ["Admin", "Risk Manager", "Analyst", "Viewer"],
+  "test_user": {
+    "email": "analyst@finguard.ai",
+    "full_name": "Sarah Chen",
+    "role": "Analyst"
+  }
+}
